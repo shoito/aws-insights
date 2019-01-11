@@ -3,9 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/golang:1.11
-        environment:
-          GO111MODULE: "ON"      
-    working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
+    working_directory: /go/src/github.com/shoito/aws-insights
     steps:
       - checkout
       - run: go get -v -t -d ./...

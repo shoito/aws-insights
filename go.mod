@@ -1,4 +1,4 @@
-module github.com/shoito/awsinsights
+module github.com/shoito/aws-insights
 
 require (
 	github.com/spf13/cobra v0.0.3
