@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
 
@@ -11,7 +9,7 @@ var ec2Cmd = &cobra.Command{
 	Short: "Amazon EC2 Insights Command",
 	Long: `Amazon EC2 Insights Command`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("ec2 called")
+		cmd.Println("ec2 called")
 	},
 }
 
