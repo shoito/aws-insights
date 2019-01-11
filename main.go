@@ -1,6 +1,6 @@
 package main
 
-import "github.com/shoito/awsinsights/cmd"
+import "github.com/shoito/aws-insights/cmd"
 
 func main() {
 	cmd.Execute()
