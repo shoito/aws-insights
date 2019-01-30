@@ -40,10 +40,12 @@ Available Commands:
   s3          Amazon S3 Insights Command
 
 Flags:
-      --config string   config file (default is $HOME/.iaws.yaml)
-  -h, --help            help for iaws
-
-Use "iaws [command] --help" for more information about a command.
+  -c, --config string         Configuration file (default "$HOME/.iaws.yaml")
+  -h, --help                  help for iaws
+  -o, --output string         The formatting style for command output (excel, pdf, json, ...) (default "excel")
+      --profile string        Use a specific profile from your credential file
+      --region string         The region to use. Overrides config/env settings (default "ap-northeast-1")
+      --service stringArray   Services(ec2,rds,s3,...). (default "all")
 ```
 
 ```sh
