@@ -9,7 +9,11 @@ import (
 	"github.com/spf13/viper"
 )
 
+var profile string
+var region string
+var output string
 var cfgFile string
+var service []string
 
 var rootCmd = &cobra.Command{
 	Use:   "iaws",
@@ -30,7 +34,14 @@ func Execute() {
 
 func init() {
 	cobra.OnInitialize(initConfig)
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.iaws.yaml)")
+
+	rootCmd.PersistentFlags().StringVar(&profile, "profile", "", "Use a specific profile from your credential file")
+	rootCmd.PersistentFlags().StringVar(&region, "region", "ap-northeast-1", "The region to use. Overrides config/env settings")
+	rootCmd.PersistentFlags().StringVarP(&output, "output", "o", "excel", "The formatting style for command output (excel, pdf, json, ...)")
+	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "$HOME/.iaws.yaml", "Configuration file")
+
+	rootCmd.Flags().StringArrayVar(&service, "service", nil, "Services(ec2,rds,s3,...). (default \"all\")")
+	//rootCmd.MarkPersistentFlagRequired("region")
 }
 
 func initConfig() {
