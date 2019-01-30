@@ -9,6 +9,7 @@ import (
 	"github.com/spf13/viper"
 )
 
+var file string
 var profile string
 var region string
 var output string
@@ -35,6 +36,7 @@ func Execute() {
 func init() {
 	cobra.OnInitialize(initConfig)
 
+	rootCmd.PersistentFlags().StringVarP(&file, "file", "f", "", "Output file")
 	rootCmd.PersistentFlags().StringVar(&profile, "profile", "", "Use a specific profile from your credential file")
 	rootCmd.PersistentFlags().StringVar(&region, "region", "ap-northeast-1", "The region to use. Overrides config/env settings")
 	rootCmd.PersistentFlags().StringVarP(&output, "output", "o", "excel", "The formatting style for command output (excel, pdf, json, ...)")

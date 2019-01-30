@@ -16,12 +16,12 @@ To update the CLI use `go get -u` to retrieve the latest version of the CLI.
 ## Usage
 Multiple services.
 ```sh
-$ iaws --service=ec2,rds,s3 -o excel
+$ iaws --service=ec2,rds,s3 -o excel -f output.xlsx
 ```
 
 Single service.
 ```sh
-$ iaws ec2 -o excel
+$ iaws ec2 -o excel -f output.xlsx
 ```
 
 Help.
@@ -41,11 +41,14 @@ Available Commands:
 
 Flags:
   -c, --config string         Configuration file (default "$HOME/.iaws.yaml")
+  -f, --file string           Output file
   -h, --help                  help for iaws
   -o, --output string         The formatting style for command output (excel, pdf, json, ...) (default "excel")
       --profile string        Use a specific profile from your credential file
       --region string         The region to use. Overrides config/env settings (default "ap-northeast-1")
       --service stringArray   Services(ec2,rds,s3,...). (default "all")
+
+Use "iaws [command] --help" for more information about a command.
 ```
 
 ```sh
@@ -60,6 +63,7 @@ Flags:
 
 Global Flags:
   -c, --config string    Configuration file (default "$HOME/.iaws.yaml")
+  -f, --file string      Output file
   -o, --output string    The formatting style for command output (excel, pdf, json, ...) (default "excel")
       --profile string   Use a specific profile from your credential file
       --region string    The region to use. Overrides config/env settings (default "ap-northeast-1")
