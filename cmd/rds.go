@@ -4,16 +4,16 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var s3Cmd = &cobra.Command{
-	Use:   "s3",
-	Short: "Amazon S3 Insights Command",
+var rdsCmd = &cobra.Command{
+	Use:   "rds",
+	Short: "Amazon RDS Insights Command",
 	Run: func(cmd *cobra.Command, args []string) {
-		cmd.Println("s3 called")
+		cmd.Println("rds called")
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(s3Cmd)
+	rootCmd.AddCommand(rdsCmd)
 
 	// Here you will define your flags and configuration settings.
 

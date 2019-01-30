@@ -7,7 +7,6 @@ import (
 var ec2Cmd = &cobra.Command{
 	Use:   "ec2",
 	Short: "Amazon EC2 Insights Command",
-	Long: `Amazon EC2 Insights Command`,
 	Run: func(cmd *cobra.Command, args []string) {
 		cmd.Println("ec2 called")
 	},
