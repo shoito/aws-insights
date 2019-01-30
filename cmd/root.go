@@ -1,10 +1,9 @@
 package cmd
 
 import (
-	"fmt"
 	"os"
 
-	homedir "github.com/mitchellh/go-homedir"
+	"github.com/mitchellh/go-homedir"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -52,7 +51,7 @@ func initConfig() {
 	} else {
 		home, err := homedir.Dir()
 		if err != nil {
-			fmt.Println(err)
+			rootCmd.Println(err)
 			os.Exit(1)
 		}
 
@@ -63,6 +62,6 @@ func initConfig() {
 	viper.AutomaticEnv()
 
 	if err := viper.ReadInConfig(); err == nil {
-		fmt.Println("Using config file:", viper.ConfigFileUsed())
+		rootCmd.Println("Using config file:", viper.ConfigFileUsed())
 	}
 }
